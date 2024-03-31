@@ -1,0 +1,46 @@
+<html>
+    <style>
+        body{ 
+          font-size: 15pt;
+          font-family: arial;
+        }
+      </style>
+    
+    <body>
+        <h1 id="heading">Welcome back!</h1>
+        <p></p>
+        <p>What you had before:</p>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Order Date (yy/mm/dd)</th>
+                    <th>Type Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{result.orderid}}</td>
+                        <td>{{result.orderdate}}</td>
+                        <td>{{result.typename}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p>Would you like discover more scooter?</p>
+        <form action="/prodectselect" method="POST">
+            <p>Choose a group of products:
+                <select name="sale_status">
+                  <option value="">No Selection</option>
+                  <option value="clearence">Clearance</option>
+                  <option value="new_arrival">New Arrival</option>
+                </select>
+            </p>
+            <button type="submit">See More Scooters</button>
+        </form>
+
+    </body>
+
+</html>

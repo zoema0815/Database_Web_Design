@@ -1,0 +1,72 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+    .signup_form,
+    .login_form{
+      display: none;
+    }
+  </style>
+
+  <body>
+    <h1 id="heading">Welcome to the fantastic scooter company!</h1>
+    <p>Please signup or login...</p> 
+    <button id="signup-btn">Signup</button>
+    <button id="login-btn">Login</button>
+  
+    <form method="POST" action="/signup" class="signup_form">
+      <p>First Name: <input type="text" name="firstname"></p>
+      <p>Last Name: <input type="text" name="lastname"></p>
+      <p>Email: <input type="email" name="email"></p>
+      <p>Phone: <input type="number" name="phone"></p>
+      <p>Address: <input type="text" name="address"></p>
+      <p>Pick your favorite color:
+        <select name="favorite_color">
+          <option value="Paint1">RED</option>
+          <option value="Paint2">BLUE</option>
+          <option value="Paint3">GREEN</option>
+          <option value="Paint4">YELLOW</option>
+          <option value="Paint5">PURPLE</option>
+          <option value="Paint6">ORANGE</option>
+          <option value="Paint7">PINK</option>
+          <option value="Paint8">BROWN</option>
+          <option value="Paint9">WHITE</option>
+          <option value="Paint10">BLACK</option>
+        </select>
+      </p>
+      <p><button type="submit">Submit</button></p>
+    </form>
+
+    <form method="POST" action="/login" class="login_form">
+      <p>Please use your email and phone number to login:</p>
+      <p>Email: <input type="email" name="email"></p>
+      <p>Phone: <input type="number" name="phone"></p>
+      <p><button type="submit">Confirm</button></p>
+    </form>
+
+    <script>
+      const signupForm = document.querySelector('.signup_form')
+      const loginForm = document.querySelector('.login_form')
+
+      document.querySelector('#signup-btn').addEventListener('click', ()=>{
+        signupForm.style.display = 'block';
+        loginForm.style.display = 'none';
+      });
+
+      document.querySelector('#login-btn').addEventListener('click', ()=>{
+        signupForm.style.display = 'none';
+        loginForm.style.display = 'block';
+      });
+    </script>
+
+<!-- <p><a href="another">Go to the other page</a></p>
+<form method="POST" action="/add">
+<p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
+</form> -->
+
+  </body>
+
+
+</html>

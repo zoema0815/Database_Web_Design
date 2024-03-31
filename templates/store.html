@@ -1,0 +1,51 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+<body>
+  <h1>Store Location Details:</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Store ID</th>
+        <th>Store's Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Owner's Name</th>
+        <th>Owner's Email</th>
+        <th>Owner's Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+        <tr>
+          <td>{{result.storeid}}</td>
+          <td>{{result.address}}</td>
+          <td>{{result.city}}</td>
+          <td>{{result.state}}</td>
+          <td>{{result.zipcode}}</td>
+          <td>{{result.owner}}</td>
+          <td>{{result.email}}</td>
+          <td>{{result.phone}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+  <td>
+    <button type="button" onclick="cancel();">Cancel</button>
+  </td>
+
+  <script>
+    function cancel() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
